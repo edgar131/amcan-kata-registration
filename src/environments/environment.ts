@@ -4,5 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  configHost: '/assets/mock_config.json',
+  categoryHost: '/assets/mock_categories.json'
 };

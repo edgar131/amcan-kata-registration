@@ -6,6 +6,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {flatMap} from 'rxjs/operators';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {environment} from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -56,10 +57,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     const now: Date = new Date();
-    this.http.get<any>('/assets/mock_config.json').subscribe(config => {
+    this.http.get<any>(environment.configHost).subscribe(config => {
       this.competitionDate = config.competition_date;
     });
-    this.http.get<any[]>('/assets/mock_categories.json').subscribe(categories => {
+    this.http.get<any[]>(environment.categoryHost).subscribe(categories => {
       categories.forEach((item) => this.categories.push(item));
     });
     this.minDate = {
