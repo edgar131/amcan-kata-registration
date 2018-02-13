@@ -50,7 +50,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    this.service.postRegistration(this.tori, this.uki, this.categories).then(resp => {
+    this.service.postRegistration(this.tori, this.uki, this.selectedCategories).then(resp => {
       this.router.navigateByUrl('/payment');
     });
   }
