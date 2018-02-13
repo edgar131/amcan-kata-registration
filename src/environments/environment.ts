@@ -6,5 +6,6 @@
 export const environment = {
   production: false,
   configHost: '/assets/mock_config.json',
-  categoryHost: '/assets/mock_categories.json'
+  categoryHost: '/assets/mock_categories.json',
+  registerHost: '/assets/mock_submit.json'
 };

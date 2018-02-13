@@ -1,0 +1,39 @@
+<div class="payment">
+  <h1>Payment</h1>
+  <div class="competitors" style="display:flex">
+    <div>
+      <h3>Tori</h3>
+      <div><span class="label">Name: </span>{{registration.tori.firstName}} {{registration.tori.lastName}}</div>
+      <div><span class="label">Sex: </span>{{registration.tori.sex}}</div>
+      <div><span class="label">DOB: </span>{{registration.tori.dob}}</div>
+      <div><span class="label">Email: </span>{{registration.tori.email}}</div>
+      <div><span class="label">Phone #: </span>{{registration.tori.phone}}</div>
+    </div>
+    <div>
+      <h3>Uki</h3>
+      <div><span class="label">Name: </span>{{registration.uki.firstName}} {{registration.uki.lastName}}</div>
+      <div><span class="label">Sex: </span>{{registration.uki.sex}}</div>
+      <div><span class="label">DOB: </span>{{registration.uki.dob}}</div>
+      <div><span class="label">Email: </span>{{registration.uki.email}}</div>
+      <div><span class="label">Phone #: </span>{{registration.uki.phone}}</div>
+    </div>
+  </div>
+  <h3>Katas</h3>
+  <div *ngFor="let cat of selectedCategories">{{cat.label}}</div>
+  <h3>Payment</h3>
+  <div>Kata: ${{kata_cost}}</div>
+  <div *ngIf="selectedCategories.length === 2">Additional Kata: ${{kata_cost_additional}}</div>
+  <div style="font-weight:bold;">Balance Due: ${{registration.balance_due}}</div>
+  <br/>
+  <form method="post" ngNoForm action="https://www.paypal.com/cgi-bin/webscr">
+    <input type="hidden" name="cmd" value="_xclick"/>
+    <input type="hidden" name="currency_code" value="USD"/>
+    <input type="hidden" name="business" value="paypal@amcanjudo.org"/>
+    <input type="hidden" name="item_name" value="AM-CAN 2018 Kata Registration"/>
+    <input type="hidden" name="no_shipping" value="0"/>
+    <input type="hidden" name="custom" value="{{registration.id}}"/>
+    <input type="hidden" name="amount" value="{{registration.balance_due}}"/>
+    <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit"
+           alt="Make payments with PayPal - it's fast, free and secure!" style="border: none;">
+  </form>
+</div>

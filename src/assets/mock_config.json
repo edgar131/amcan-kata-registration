@@ -3,5 +3,7 @@
   "early_reg_cutoff": "05-16-2018",
   "early_reg_cost": 75,
   "late_reg_cost": 85,
-  "extra_div_cost": 25
+  "extra_div_cost": 25,
+  "kata_cost": 125,
+  "kata_cost_additional": 50
 }
