@@ -14,3 +14,14 @@
 .ng-invalid:not(form) {
   border-left: 5px solid #a94442; /* red */
 }
+
+.form-check-label {
+  padding-left: 0px;
+}
+
+button:not([disabled]) {
+  cursor: pointer;
+}
+button[disabled] {
+  cursor:not-allowed;
+}

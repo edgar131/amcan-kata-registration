@@ -110,13 +110,13 @@
   </div>
   <div style="text-align:center;">
     <h2>Kata Selection (Max of 2)</h2>
-    <div class="form-check form-check-inline" *ngFor="let cat of categories">
+    <div class="form-check" *ngFor="let cat of categories">
       <input class="form-check-input" type="checkbox" name="selectedCategories[]" (click)="categorySelected(cat)"
              value="{{cat.id}}">
       <label class="form-check-label">{{cat.label}}</label>
     </div>
   </div>
-  <div style="text-align:center;margin-top:15px">
+  <div style="text-align:center;margin-top:15px;margin-bottom:15px;">
     <button [disabled]="!kataForm.valid || selectedCategories.length == 0 || selectedCategories.length > 2" type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>

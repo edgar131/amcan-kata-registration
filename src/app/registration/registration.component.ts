@@ -13,8 +13,8 @@ import {Router} from "@angular/router";
   providers: []
 })
 export class RegistrationComponent implements OnInit {
-  tori = {};
-  uki = {};
+  tori: any;
+  uki: any;
   ukiDobBs: NgbDateStruct;
   toriDobBs: NgbDateStruct;
   competitionDate;
@@ -57,6 +57,8 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit() {
     const now: Date = new Date();
+    this.tori = {};
+    this.uki = {};
     this.service.getConfig().subscribe(config => {
       this.competitionDate = config.competition_date;
     });
