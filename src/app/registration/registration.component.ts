@@ -22,6 +22,7 @@ export class RegistrationComponent implements OnInit {
   maxDate: NgbDateStruct;
   selectedCategories: Array<number> = [];
   categories: Array<any> = [];
+  submissionError = false;
 
   constructor(private router: Router, private service: KataService) {
   }
@@ -52,6 +53,8 @@ export class RegistrationComponent implements OnInit {
   onSubmit() {
     this.service.postRegistration(this.tori, this.uki, this.selectedCategories).then(resp => {
       this.router.navigateByUrl('/payment');
+    }, err => {
+      this.submissionError = true;
     });
   }
 

@@ -118,5 +118,8 @@
   </div>
   <div style="text-align:center;margin-top:15px;margin-bottom:15px;">
     <button [disabled]="!kataForm.valid || selectedCategories.length == 0 || selectedCategories.length > 2" type="submit" class="btn btn-primary">Submit</button>
+    <div class="error" *ngIf="submissionError">
+      There was an error with your submission.  Please contact <a href="mailto:info@amcanjudo.org">info@amcanjudo.org</a>
+    </div>
   </div>
 </form>

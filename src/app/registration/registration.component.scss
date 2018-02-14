@@ -25,3 +25,7 @@ button:not([disabled]) {
 button[disabled] {
   cursor:not-allowed;
 }
+.error {
+  color: red;
+  font-weight:bold;
+}
