@@ -13,6 +13,7 @@ export class PaymentComponent implements OnInit {
   selectedCategories: any[] = [];
   kata_cost;
   kata_cost_additional;
+  competition_year;
 
   constructor(private router: Router, private service: KataService) { }
 
@@ -26,6 +27,7 @@ export class PaymentComponent implements OnInit {
     this.service.getConfig().subscribe(config => {
       this.kata_cost = config.kata_cost;
       this.kata_cost_additional = config.kata_cost_additional;
+      this.competition_year = config.competition_year;
     });
     this.service.getKataCategories().subscribe(categories => {
       let cats = {};

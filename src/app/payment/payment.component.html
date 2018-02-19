@@ -25,11 +25,14 @@
   <div *ngIf="selectedCategories.length === 2">Additional Kata: ${{kata_cost_additional}}</div>
   <div style="font-weight:bold;">Balance Due: ${{registration.balance_due}}</div>
   <br/>
+  <div class="katawarning">
+    *Note: You must still fill out the full form in the tournament packet to bring to the Kata competition
+  </div>
   <form method="post" ngNoForm action="https://www.paypal.com/cgi-bin/webscr">
     <input type="hidden" name="cmd" value="_xclick"/>
     <input type="hidden" name="currency_code" value="USD"/>
     <input type="hidden" name="business" value="paypal@amcanjudo.org"/>
-    <input type="hidden" name="item_name" value="AM-CAN 2018 Kata Registration"/>
+    <input type="hidden" name="item_name" value="AM-CAN {{competition_year}} Kata Registration"/>
     <input type="hidden" name="no_shipping" value="0"/>
     <input type="hidden" name="custom" value="{{registration.id}}"/>
     <input type="hidden" name="amount" value="{{registration.balance_due}}"/>
